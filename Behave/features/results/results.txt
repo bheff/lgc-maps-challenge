@@ -1,0 +1,15 @@
+$ behave
+Feature: Search google maps and get directions # features/maps.feature:1
+
+  Scenario: Search google maps                          # features/maps.feature:2
+    Given The user is at the applications website       # features/steps/maps_steps.py:6 36.509s
+    When The user enters Dublin in the search box       # features/steps/maps_steps.py:13 0.119s
+    And Clicks on the search icon                       # features/steps/maps_steps.py:19 0.102s
+    And Verify left panel has Dublin as a headline text # features/steps/maps_steps.py:25 2.292s
+    And Clicks on the directions icon                   # features/steps/maps_steps.py:31 0.081s
+    Then Verify destination field is Dublin             # features/steps/maps_steps.py:37 0.000s
+
+1 feature passed, 0 failed, 0 skipped
+1 scenario passed, 0 failed, 0 skipped
+6 steps passed, 0 failed, 0 skipped, 0 undefined
+Took 0m39.103s

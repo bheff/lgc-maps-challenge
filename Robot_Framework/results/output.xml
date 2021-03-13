@@ -1,0 +1,944 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.5 on linux)" generated="20210313 13:12:39.991" rpa="false">
+<suite id="s1" name="Robot Framework" source="/home/bheffernan/PycharmProjects/google_maps/Robot Framework">
+<kw name="Open App Page" type="setup">
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>Trace</arg>
+</arguments>
+<msg timestamp="20210313 13:12:40.136" level="INFO">Log level changed from INFO to TRACE.</msg>
+<msg timestamp="20210313 13:12:40.136" level="TRACE">Return: 'INFO'</msg>
+<status status="PASS" starttime="20210313 13:12:40.135" endtime="20210313 13:12:40.136"></status>
+</kw>
+<kw name="Set Environment Vars">
+<msg timestamp="20210313 13:12:40.136" level="TRACE">Arguments: [  ]</msg>
+<kw name="Set Environment Variable" library="OperatingSystem">
+<doc>Sets an environment variable to a specified value.</doc>
+<arguments>
+<arg>RESOURCE_ROOT</arg>
+<arg>/home/bheffernan/PycharmProjects/google_maps/Robot Framework/resources</arg>
+</arguments>
+<msg timestamp="20210313 13:12:40.137" level="TRACE">Arguments: [ 'RESOURCE_ROOT' | '/home/bheffernan/PycharmProjects/google_maps/Robot Framework/resources' ]</msg>
+<msg timestamp="20210313 13:12:40.137" level="INFO">Environment variable 'RESOURCE_ROOT' set to value '/home/bheffernan/PycharmProjects/google_maps/Robot Framework/resources'.</msg>
+<msg timestamp="20210313 13:12:40.137" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:12:40.137" endtime="20210313 13:12:40.137"></status>
+</kw>
+<msg timestamp="20210313 13:12:40.137" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:12:40.136" endtime="20210313 13:12:40.137"></status>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>30</arg>
+</arguments>
+<msg timestamp="20210313 13:12:40.138" level="TRACE">Arguments: [ datetime.timedelta(seconds=30) ]</msg>
+<msg timestamp="20210313 13:12:40.138" level="TRACE">Return: '0 seconds'</msg>
+<status status="PASS" starttime="20210313 13:12:40.137" endtime="20210313 13:12:40.138"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>30</arg>
+</arguments>
+<msg timestamp="20210313 13:12:40.138" level="TRACE">Arguments: [ datetime.timedelta(seconds=30) ]</msg>
+<msg timestamp="20210313 13:12:40.138" level="TRACE">Return: '5 seconds'</msg>
+<status status="PASS" starttime="20210313 13:12:40.138" endtime="20210313 13:12:40.138"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Opening ${browser} Browser.</arg>
+</arguments>
+<msg timestamp="20210313 13:12:40.139" level="TRACE">Arguments: [ 'Opening chrome Browser.' ]</msg>
+<msg timestamp="20210313 13:12:40.139" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:12:40.138" endtime="20210313 13:12:40.139"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${browser}</arg>
+<arg>options=add_argument("--disable-popup-blocking"); add_argument("--ignore-certificate-errors")</arg>
+</arguments>
+<msg timestamp="20210313 13:12:40.139" level="TRACE">Arguments: [ 'about:blank' | 'chrome' | options='add_argument("--disable-popup-blocking"); add_argument("--ignore-certificate-errors")' ]</msg>
+<msg timestamp="20210313 13:12:40.140" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<msg timestamp="20210313 13:12:41.156" level="DEBUG">POST http://127.0.0.1:55979/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "args": ["--disable-popup-blocking", "--ignore-certificate-errors"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "args": ["--disable-popup-blocking", "--ignore-certificate-errors"]}}}</msg>
+<msg timestamp="20210313 13:12:41.159" level="DEBUG">Starting new HTTP connection (1): 127.0.0.1:55979</msg>
+<msg timestamp="20210313 13:12:41.602" level="DEBUG">http://127.0.0.1:55979 "POST /session HTTP/1.1" 200 716</msg>
+<msg timestamp="20210313 13:12:41.603" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:12:41.603" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/timeouts {"script": 30000}</msg>
+<msg timestamp="20210313 13:12:41.604" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/timeouts HTTP/1.1" 200 14</msg>
+<msg timestamp="20210313 13:12:41.605" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:12:41.605" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/timeouts {"implicit": 30000}</msg>
+<msg timestamp="20210313 13:12:41.606" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/timeouts HTTP/1.1" 200 14</msg>
+<msg timestamp="20210313 13:12:41.607" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:12:41.607" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/url {"url": "about:blank"}</msg>
+<msg timestamp="20210313 13:12:41.633" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/url HTTP/1.1" 200 14</msg>
+<msg timestamp="20210313 13:12:41.634" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:12:41.634" level="DEBUG">Opened browser with session id b9046a9f1f21dd2fb199afabfcab1873.</msg>
+<msg timestamp="20210313 13:12:41.634" level="TRACE">Return: 1</msg>
+<status status="PASS" starttime="20210313 13:12:40.139" endtime="20210313 13:12:41.634"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<msg timestamp="20210313 13:12:41.635" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20210313 13:12:41.635" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/window/maximize {}</msg>
+<msg timestamp="20210313 13:12:41.739" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/window/maximize HTTP/1.1" 200 54</msg>
+<msg timestamp="20210313 13:12:41.739" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:12:41.739" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:12:41.635" endtime="20210313 13:12:41.739"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${app_url}</arg>
+</arguments>
+<msg timestamp="20210313 13:12:41.740" level="TRACE">Arguments: [ '${app_url}' ]</msg>
+<msg timestamp="20210313 13:12:41.740" level="INFO">${app_url} = https://www.google.com/maps</msg>
+<msg timestamp="20210313 13:12:41.740" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:12:41.740" endtime="20210313 13:12:41.740"></status>
+</kw>
+<msg timestamp="20210313 13:12:41.740" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:12:40.135" endtime="20210313 13:12:41.740"></status>
+</kw>
+<suite id="s1-s1" name="Tests" source="/home/bheffernan/PycharmProjects/google_maps/Robot Framework/tests">
+<suite id="s1-s1-s1" name="Maps Test" source="/home/bheffernan/PycharmProjects/google_maps/Robot Framework/tests/maps_test.robot">
+<test id="s1-s1-s1-t1" name="Verify google maps search and directions functionatily to Dublin">
+<kw name="Go to google maps website" library="maps_keywords">
+<msg timestamp="20210313 13:12:41.766" level="TRACE">Arguments: [  ]</msg>
+<kw name="Open google maps page" library="maps">
+<msg timestamp="20210313 13:12:41.766" level="TRACE">Arguments: [  ]</msg>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>\nNavigating to url.</arg>
+</arguments>
+<msg timestamp="20210313 13:12:41.767" level="TRACE">Arguments: [ '\nNavigating to url.' ]</msg>
+<msg timestamp="20210313 13:12:41.767" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:12:41.767" endtime="20210313 13:12:41.767"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${app_url}</arg>
+</arguments>
+<msg timestamp="20210313 13:12:41.768" level="TRACE">Arguments: [ 'https://www.google.com/maps' ]</msg>
+<msg timestamp="20210313 13:12:41.768" level="INFO">Opening url 'https://www.google.com/maps'</msg>
+<msg timestamp="20210313 13:12:41.768" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/url {"url": "https://www.google.com/maps"}</msg>
+<msg timestamp="20210313 13:13:00.587" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/url HTTP/1.1" 200 14</msg>
+<msg timestamp="20210313 13:13:00.588" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:00.588" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:12:41.768" endtime="20210313 13:13:00.588"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${search_box}</arg>
+</arguments>
+<msg timestamp="20210313 13:13:00.589" level="TRACE">Arguments: [ 'id=searchboxinput' ]</msg>
+<msg timestamp="20210313 13:13:00.590" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "css selector", "value": "[id=\"searchboxinput\"]"}</msg>
+<msg timestamp="20210313 13:13:00.636" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:00.637" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:00.637" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:00.588" endtime="20210313 13:13:00.637"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${cookies_accepted}"=="true"</arg>
+<arg>Return From Keyword</arg>
+</arguments>
+<msg timestamp="20210313 13:13:00.638" level="TRACE">Arguments: [ '"false"=="true"' | 'Return From Keyword' ]</msg>
+<msg timestamp="20210313 13:13:00.639" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:00.637" endtime="20210313 13:13:00.639"></status>
+</kw>
+<kw name="Cookie Consent" library="maps">
+<msg timestamp="20210313 13:13:00.640" level="TRACE">Arguments: [  ]</msg>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>\nAccepting cookies.</arg>
+</arguments>
+<msg timestamp="20210313 13:13:00.640" level="TRACE">Arguments: [ '\nAccepting cookies.' ]</msg>
+<msg timestamp="20210313 13:13:00.640" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:00.640" endtime="20210313 13:13:00.640"></status>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${cookies_iframe}</arg>
+</arguments>
+<msg timestamp="20210313 13:13:00.641" level="TRACE">Arguments: [ 'xpath=//*[@id="consent-bump"]//*/iframe' ]</msg>
+<msg timestamp="20210313 13:13:00.641" level="INFO">Selecting frame 'xpath=//*[@id="consent-bump"]//*/iframe'.</msg>
+<msg timestamp="20210313 13:13:00.641" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "xpath", "value": "//*[@id=\"consent-bump\"]//*/iframe"}</msg>
+<msg timestamp="20210313 13:13:00.678" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:00.679" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:00.679" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/frame {"id": {"ELEMENT": "667f92fa-14e6-427f-b58e-b75c278b22f4", "element-6066-11e4-a52e-4f735466cecf": "667f92fa-14e6-427f-b58e-b75c278b22f4"}}</msg>
+<msg timestamp="20210313 13:13:00.725" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/frame HTTP/1.1" 200 14</msg>
+<msg timestamp="20210313 13:13:00.725" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:00.726" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:00.641" endtime="20210313 13:13:00.726"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${cookie_consent}</arg>
+</arguments>
+<msg timestamp="20210313 13:13:00.726" level="TRACE">Arguments: [ 'id=introAgreeButton' ]</msg>
+<msg timestamp="20210313 13:13:00.727" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "css selector", "value": "[id=\"introAgreeButton\"]"}</msg>
+<msg timestamp="20210313 13:13:00.745" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:00.746" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:00.746" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:00.726" endtime="20210313 13:13:00.746"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${cookie_consent}</arg>
+</arguments>
+<msg timestamp="20210313 13:13:00.746" level="TRACE">Arguments: [ 'id=introAgreeButton' ]</msg>
+<msg timestamp="20210313 13:13:00.746" level="INFO">Clicking element 'id=introAgreeButton'.</msg>
+<msg timestamp="20210313 13:13:00.747" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "css selector", "value": "[id=\"introAgreeButton\"]"}</msg>
+<msg timestamp="20210313 13:13:00.776" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:00.777" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:00.777" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/element/f563c5c2-ffec-43a1-a4b3-e5be52456dc1/click {"id": "f563c5c2-ffec-43a1-a4b3-e5be52456dc1"}</msg>
+<msg timestamp="20210313 13:13:17.433" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/element/f563c5c2-ffec-43a1-a4b3-e5be52456dc1/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20210313 13:13:17.433" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:17.433" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:00.746" endtime="20210313 13:13:17.433"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${cookies_accepted}</arg>
+<arg>true</arg>
+</arguments>
+<msg timestamp="20210313 13:13:17.434" level="TRACE">Arguments: [ '${cookies_accepted}' | 'true' ]</msg>
+<msg timestamp="20210313 13:13:17.434" level="INFO">${cookies_accepted} = true</msg>
+<msg timestamp="20210313 13:13:17.434" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:17.433" endtime="20210313 13:13:17.434"></status>
+</kw>
+<msg timestamp="20210313 13:13:17.434" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:00.640" endtime="20210313 13:13:17.434"></status>
+</kw>
+<msg timestamp="20210313 13:13:17.434" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:12:41.766" endtime="20210313 13:13:17.435"></status>
+</kw>
+<msg timestamp="20210313 13:13:17.435" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:12:41.766" endtime="20210313 13:13:17.435"></status>
+</kw>
+<kw name="Enter Dublin in the search box" library="maps_keywords">
+<msg timestamp="20210313 13:13:17.435" level="TRACE">Arguments: [ ${location}='Dublin' ]</msg>
+<kw name="Enter ${location} in the search input" library="maps">
+<msg timestamp="20210313 13:13:17.436" level="TRACE">Arguments: [ ${location}='Dublin' ]</msg>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>\nGoing to search for ${location}.</arg>
+</arguments>
+<msg timestamp="20210313 13:13:17.436" level="TRACE">Arguments: [ '\nGoing to search for Dublin.' ]</msg>
+<msg timestamp="20210313 13:13:17.437" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:17.436" endtime="20210313 13:13:17.437"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210313 13:13:17.437" level="TRACE">Arguments: [ '1' ]</msg>
+<msg timestamp="20210313 13:13:18.438" level="INFO">Slept 1 second</msg>
+<msg timestamp="20210313 13:13:18.438" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:17.437" endtime="20210313 13:13:18.439"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${search_box}</arg>
+</arguments>
+<msg timestamp="20210313 13:13:18.440" level="TRACE">Arguments: [ 'id=searchboxinput' ]</msg>
+<msg timestamp="20210313 13:13:18.441" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "css selector", "value": "[id=\"searchboxinput\"]"}</msg>
+<msg timestamp="20210313 13:13:18.471" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:18.471" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:18.472" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:18.439" endtime="20210313 13:13:18.472"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${search_box}</arg>
+<arg>${location}</arg>
+</arguments>
+<msg timestamp="20210313 13:13:18.473" level="TRACE">Arguments: [ 'id=searchboxinput' | 'Dublin' ]</msg>
+<msg timestamp="20210313 13:13:18.473" level="INFO">Typing text 'Dublin' into text field 'id=searchboxinput'.</msg>
+<msg timestamp="20210313 13:13:18.473" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "css selector", "value": "[id=\"searchboxinput\"]"}</msg>
+<msg timestamp="20210313 13:13:18.490" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:18.490" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:18.490" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/element/66ec2360-a9f9-406a-b1a4-a25b8f14bb2f/clear {"id": "66ec2360-a9f9-406a-b1a4-a25b8f14bb2f"}</msg>
+<msg timestamp="20210313 13:13:18.527" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/element/66ec2360-a9f9-406a-b1a4-a25b8f14bb2f/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20210313 13:13:18.528" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:18.528" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/element/66ec2360-a9f9-406a-b1a4-a25b8f14bb2f/value {"text": "Dublin", "value": ["D", "u", "b", "l", "i", "n"], "id": "66ec2360-a9f9-406a-b1a4-a25b8f14bb2f"}</msg>
+<msg timestamp="20210313 13:13:18.607" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/element/66ec2360-a9f9-406a-b1a4-a25b8f14bb2f/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20210313 13:13:18.607" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:18.607" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:18.472" endtime="20210313 13:13:18.607"></status>
+</kw>
+<msg timestamp="20210313 13:13:18.607" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:17.436" endtime="20210313 13:13:18.607"></status>
+</kw>
+<msg timestamp="20210313 13:13:18.607" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:17.435" endtime="20210313 13:13:18.607"></status>
+</kw>
+<kw name="Click the Search icon" library="maps_keywords">
+<msg timestamp="20210313 13:13:18.608" level="TRACE">Arguments: [  ]</msg>
+<kw name="Click on the search icon" library="maps">
+<msg timestamp="20210313 13:13:18.608" level="TRACE">Arguments: [  ]</msg>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>\nSubmitting the search.</arg>
+</arguments>
+<msg timestamp="20210313 13:13:18.608" level="TRACE">Arguments: [ '\nSubmitting the search.' ]</msg>
+<msg timestamp="20210313 13:13:18.609" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:18.608" endtime="20210313 13:13:18.609"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${search_icon}</arg>
+</arguments>
+<msg timestamp="20210313 13:13:18.609" level="TRACE">Arguments: [ 'id=searchbox-searchbutton' ]</msg>
+<msg timestamp="20210313 13:13:18.609" level="INFO">Clicking button 'id=searchbox-searchbutton'.</msg>
+<msg timestamp="20210313 13:13:18.609" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "css selector", "value": "[id=\"searchbox-searchbutton\"]"}</msg>
+<msg timestamp="20210313 13:13:18.621" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:18.622" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:18.622" level="DEBUG">GET http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/element/d7283f12-3d30-459c-8c87-7c727be2bcf7/name {"id": "d7283f12-3d30-459c-8c87-7c727be2bcf7"}</msg>
+<msg timestamp="20210313 13:13:18.627" level="DEBUG">http://127.0.0.1:55979 "GET /session/b9046a9f1f21dd2fb199afabfcab1873/element/d7283f12-3d30-459c-8c87-7c727be2bcf7/name HTTP/1.1" 200 18</msg>
+<msg timestamp="20210313 13:13:18.627" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:18.627" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "css selector", "value": "[id=\"searchbox-searchbutton\"]"}</msg>
+<msg timestamp="20210313 13:13:18.634" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:18.635" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:18.635" level="DEBUG">GET http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/element/d7283f12-3d30-459c-8c87-7c727be2bcf7/name {"id": "d7283f12-3d30-459c-8c87-7c727be2bcf7"}</msg>
+<msg timestamp="20210313 13:13:18.638" level="DEBUG">http://127.0.0.1:55979 "GET /session/b9046a9f1f21dd2fb199afabfcab1873/element/d7283f12-3d30-459c-8c87-7c727be2bcf7/name HTTP/1.1" 200 18</msg>
+<msg timestamp="20210313 13:13:18.638" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:18.638" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/element/d7283f12-3d30-459c-8c87-7c727be2bcf7/click {"id": "d7283f12-3d30-459c-8c87-7c727be2bcf7"}</msg>
+<msg timestamp="20210313 13:13:18.728" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/element/d7283f12-3d30-459c-8c87-7c727be2bcf7/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20210313 13:13:18.729" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:18.729" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:18.609" endtime="20210313 13:13:18.729"></status>
+</kw>
+<msg timestamp="20210313 13:13:18.729" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:18.608" endtime="20210313 13:13:18.729"></status>
+</kw>
+<msg timestamp="20210313 13:13:18.730" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:18.608" endtime="20210313 13:13:18.730"></status>
+</kw>
+<kw name="Verify left panel has Dublin as a headline text" library="maps_keywords">
+<msg timestamp="20210313 13:13:18.730" level="TRACE">Arguments: [ ${location}='Dublin' ]</msg>
+<kw name="Verify left panel heading contains ${location}" library="maps">
+<msg timestamp="20210313 13:13:18.730" level="TRACE">Arguments: [ ${location}='Dublin' ]</msg>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>\nVerifying the left panel heading.</arg>
+</arguments>
+<msg timestamp="20210313 13:13:18.731" level="TRACE">Arguments: [ '\nVerifying the left panel heading.' ]</msg>
+<msg timestamp="20210313 13:13:18.731" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:18.731" endtime="20210313 13:13:18.731"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${panel_heading}</arg>
+</arguments>
+<msg timestamp="20210313 13:13:18.731" level="TRACE">Arguments: [ 'xpath=//*[@id="pane"]//*/h1' ]</msg>
+<msg timestamp="20210313 13:13:18.731" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "xpath", "value": "//*[@id=\"pane\"]//*/h1"}</msg>
+<msg timestamp="20210313 13:13:20.515" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:20.516" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:20.516" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:18.731" endtime="20210313 13:13:20.516"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${panel_heading}</arg>
+</arguments>
+<assign>
+<var>${ui_heading}</var>
+</assign>
+<msg timestamp="20210313 13:13:20.516" level="TRACE">Arguments: [ 'xpath=//*[@id="pane"]//*/h1' ]</msg>
+<msg timestamp="20210313 13:13:20.517" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "xpath", "value": "//*[@id=\"pane\"]//*/h1"}</msg>
+<msg timestamp="20210313 13:13:20.568" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:20.568" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:20.568" level="DEBUG">GET http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/element/b1b048b3-b4d8-44a3-a8df-e35c045cd886/text {"id": "b1b048b3-b4d8-44a3-a8df-e35c045cd886"}</msg>
+<msg timestamp="20210313 13:13:20.650" level="DEBUG">http://127.0.0.1:55979 "GET /session/b9046a9f1f21dd2fb199afabfcab1873/element/b1b048b3-b4d8-44a3-a8df-e35c045cd886/text HTTP/1.1" 200 18</msg>
+<msg timestamp="20210313 13:13:20.650" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:20.651" level="TRACE">Return: 'Dublin'</msg>
+<msg timestamp="20210313 13:13:20.651" level="INFO">${ui_heading} = Dublin</msg>
+<status status="PASS" starttime="20210313 13:13:20.516" endtime="20210313 13:13:20.651"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${ui_heading}</arg>
+<arg>${location}</arg>
+</arguments>
+<msg timestamp="20210313 13:13:20.652" level="TRACE">Arguments: [ 'Dublin' | 'Dublin' ]</msg>
+<msg timestamp="20210313 13:13:20.652" level="DEBUG">Argument types are:
+&lt;type 'unicode'&gt;
+&lt;type 'unicode'&gt;</msg>
+<msg timestamp="20210313 13:13:20.652" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:20.651" endtime="20210313 13:13:20.652"></status>
+</kw>
+<msg timestamp="20210313 13:13:20.652" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:18.730" endtime="20210313 13:13:20.652"></status>
+</kw>
+<msg timestamp="20210313 13:13:20.653" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:18.730" endtime="20210313 13:13:20.653"></status>
+</kw>
+<kw name="Click Directions icon" library="maps_keywords">
+<msg timestamp="20210313 13:13:20.653" level="TRACE">Arguments: [  ]</msg>
+<kw name="Click on the directions icon" library="maps">
+<msg timestamp="20210313 13:13:20.654" level="TRACE">Arguments: [  ]</msg>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>\nClicking on the directions icon.</arg>
+</arguments>
+<msg timestamp="20210313 13:13:20.654" level="TRACE">Arguments: [ '\nClicking on the directions icon.' ]</msg>
+<msg timestamp="20210313 13:13:20.654" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:20.654" endtime="20210313 13:13:20.655"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${directions_icon}</arg>
+</arguments>
+<msg timestamp="20210313 13:13:20.655" level="TRACE">Arguments: [ 'xpath=//*[@id="pane"]//*/button[@data-value="Directions"]' ]</msg>
+<msg timestamp="20210313 13:13:20.655" level="INFO">Clicking button 'xpath=//*[@id="pane"]//*/button[@data-value="Directions"]'.</msg>
+<msg timestamp="20210313 13:13:20.655" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "xpath", "value": "//*[@id=\"pane\"]//*/button[@data-value=\"Directions\"]"}</msg>
+<msg timestamp="20210313 13:13:20.695" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:20.695" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:20.695" level="DEBUG">GET http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/element/69adee3c-8755-4c06-9b10-ed3ebde7b99f/name {"id": "69adee3c-8755-4c06-9b10-ed3ebde7b99f"}</msg>
+<msg timestamp="20210313 13:13:20.710" level="DEBUG">http://127.0.0.1:55979 "GET /session/b9046a9f1f21dd2fb199afabfcab1873/element/69adee3c-8755-4c06-9b10-ed3ebde7b99f/name HTTP/1.1" 200 18</msg>
+<msg timestamp="20210313 13:13:20.710" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:20.710" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "xpath", "value": "//*[@id=\"pane\"]//*/button[@data-value=\"Directions\"]"}</msg>
+<msg timestamp="20210313 13:13:20.729" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:20.729" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:20.729" level="DEBUG">GET http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/element/69adee3c-8755-4c06-9b10-ed3ebde7b99f/name {"id": "69adee3c-8755-4c06-9b10-ed3ebde7b99f"}</msg>
+<msg timestamp="20210313 13:13:20.748" level="DEBUG">http://127.0.0.1:55979 "GET /session/b9046a9f1f21dd2fb199afabfcab1873/element/69adee3c-8755-4c06-9b10-ed3ebde7b99f/name HTTP/1.1" 200 18</msg>
+<msg timestamp="20210313 13:13:20.748" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:20.749" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/element/69adee3c-8755-4c06-9b10-ed3ebde7b99f/click {"id": "69adee3c-8755-4c06-9b10-ed3ebde7b99f"}</msg>
+<msg timestamp="20210313 13:13:20.919" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/element/69adee3c-8755-4c06-9b10-ed3ebde7b99f/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20210313 13:13:20.919" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:20.920" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:20.655" endtime="20210313 13:13:20.920"></status>
+</kw>
+<msg timestamp="20210313 13:13:20.920" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:20.654" endtime="20210313 13:13:20.920"></status>
+</kw>
+<msg timestamp="20210313 13:13:20.920" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:20.653" endtime="20210313 13:13:20.920"></status>
+</kw>
+<kw name="Verify destination field is Dublin" library="maps_keywords">
+<msg timestamp="20210313 13:13:20.921" level="TRACE">Arguments: [ ${location}='Dublin' ]</msg>
+<kw name="Verify the destination field content is ${location}" library="maps">
+<msg timestamp="20210313 13:13:20.922" level="TRACE">Arguments: [ ${location}='Dublin' ]</msg>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>\nVerifying the destination field content.</arg>
+</arguments>
+<msg timestamp="20210313 13:13:20.923" level="TRACE">Arguments: [ '\nVerifying the destination field content.' ]</msg>
+<msg timestamp="20210313 13:13:20.923" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:20.923" endtime="20210313 13:13:20.923"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${destination_input}</arg>
+</arguments>
+<msg timestamp="20210313 13:13:20.924" level="TRACE">Arguments: [ 'xpath=//*[@id="directions-searchbox-1"]//*/input' ]</msg>
+<msg timestamp="20210313 13:13:20.924" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "xpath", "value": "//*[@id=\"directions-searchbox-1\"]//*/input"}</msg>
+<msg timestamp="20210313 13:13:21.286" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:21.287" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:21.287" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:20.923" endtime="20210313 13:13:21.287"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>${destination_input}</arg>
+<arg>aria-label</arg>
+</arguments>
+<assign>
+<var>${ui_destination}</var>
+</assign>
+<msg timestamp="20210313 13:13:21.288" level="TRACE">Arguments: [ 'xpath=//*[@id="directions-searchbox-1"]//*/input' | 'aria-label' ]</msg>
+<msg timestamp="20210313 13:13:21.288" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "xpath", "value": "//*[@id=\"directions-searchbox-1\"]//*/input"}</msg>
+<msg timestamp="20210313 13:13:21.351" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:21.351" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:21.351" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/execute/sync {"script": "return (function(){return function(){var d=this;function f(a){return\"string\"==typeof a};function h(a,b){this.code=a;this.a=l[a]||m;this.message=b||\"\";a=this.a.replace(/((?:^|\\s+)[a-z])/g,function(a){return a.toUpperCase().replace(/^[\\s\\xa0]+/g,\"\")});b=a.length-5;if(0&gt;b||a.indexOf(\"Error\",b)!=b)a+=\"Error\";this.name=a;a=Error(this.message);a.name=this.name;this.stack=a.stack||\"\"}\n(function(){var a=Error;function b(){}b.prototype=a.prototype;h.b=a.prototype;h.prototype=new b;h.prototype.constructor=h;h.a=function(b,c,g){for(var e=Array(arguments.length-2),k=2;k&lt;arguments.length;k++)e[k-2]=arguments[k];return a.prototype[c].apply(b,e)}})();var m=\"unknown error\",l={15:\"element not selectable\",11:\"element not visible\"};l[31]=m;l[30]=m;l[24]=\"invalid cookie domain\";l[29]=\"invalid element coordinates\";l[12]=\"invalid element state\";l[32]=\"invalid selector\";l[51]=\"invalid selector\";\nl[52]=\"invalid selector\";l[17]=\"javascript error\";l[405]=\"unsupported operation\";l[34]=\"move target out of bounds\";l[27]=\"no such alert\";l[7]=\"no such element\";l[8]=\"no such frame\";l[23]=\"no such window\";l[28]=\"script timeout\";l[33]=\"session not created\";l[10]=\"stale element reference\";l[21]=\"timeout\";l[25]=\"unable to set cookie\";l[26]=\"unexpected alert open\";l[13]=m;l[9]=\"unknown command\";h.prototype.toString=function(){return this.name+\": \"+this.message};var n;a:{var p=d.navigator;if(p){var q=p.userAgent;if(q){n=q;break a}}n=\"\"}function r(a){return-1!=n.indexOf(a)};function t(a,b){for(var e=a.length,c=f(a)?a.split(\"\"):a,g=0;g&lt;e;g++)g in c&amp;&amp;b.call(void 0,c[g],g,a)};function v(){return r(\"iPhone\")&amp;&amp;!r(\"iPod\")&amp;&amp;!r(\"iPad\")};function w(){return(r(\"Chrome\")||r(\"CriOS\"))&amp;&amp;!r(\"Edge\")};var x=r(\"Opera\"),y=r(\"Trident\")||r(\"MSIE\"),z=r(\"Edge\"),A=r(\"Gecko\")&amp;&amp;!(-1!=n.toLowerCase().indexOf(\"webkit\")&amp;&amp;!r(\"Edge\"))&amp;&amp;!(r(\"Trident\")||r(\"MSIE\"))&amp;&amp;!r(\"Edge\"),aa=-1!=n.toLowerCase().indexOf(\"webkit\")&amp;&amp;!r(\"Edge\");function B(){var a=d.document;return a?a.documentMode:void 0}var C;\na:{var D=\"\",E=function(){var a=n;if(A)return/rv\\:([^\\);]+)(\\)|;)/.exec(a);if(z)return/Edge\\/([\\d\\.]+)/.exec(a);if(y)return/\\b(?:MSIE|rv)[: ]([^\\);]+)(\\)|;)/.exec(a);if(aa)return/WebKit\\/(\\S+)/.exec(a);if(x)return/(?:Version)[ \\/]?(\\S+)/.exec(a)}();E&amp;&amp;(D=E?E[1]:\"\");if(y){var F=B();if(null!=F&amp;&amp;F&gt;parseFloat(D)){C=String(F);break a}}C=D}var G;var H=d.document;G=H&amp;&amp;y?B()||(\"CSS1Compat\"==H.compatMode?parseInt(C,10):5):void 0;var ba=r(\"Firefox\"),ca=v()||r(\"iPod\"),da=r(\"iPad\"),I=r(\"Android\")&amp;&amp;!(w()||r(\"Firefox\")||r(\"Opera\")||r(\"Silk\")),ea=w(),J=r(\"Safari\")&amp;&amp;!(w()||r(\"Coast\")||r(\"Opera\")||r(\"Edge\")||r(\"Silk\")||r(\"Android\"))&amp;&amp;!(v()||r(\"iPad\")||r(\"iPod\"));function K(a){return(a=a.exec(n))?a[1]:\"\"}(function(){if(ba)return K(/Firefox\\/([0-9.]+)/);if(y||z||x)return C;if(ea)return v()||r(\"iPad\")||r(\"iPod\")?K(/CriOS\\/([0-9.]+)/):K(/Chrome\\/([0-9.]+)/);if(J&amp;&amp;!(v()||r(\"iPad\")||r(\"iPod\")))return K(/Version\\/([0-9.]+)/);if(ca||da){var a=/Version\\/(\\S+).*Mobile\\/(\\S+)/.exec(n);if(a)return a[1]+\".\"+a[2]}else if(I)return(a=K(/Android\\s+([0-9.]+)/))?a:K(/Version\\/([0-9.]+)/);return\"\"})();var L,M=function(){if(!A)return!1;var a=d.Components;if(!a)return!1;try{if(!a.classes)return!1}catch(g){return!1}var b=a.classes,a=a.interfaces,e=b[\"@mozilla.org/xpcom/version-comparator;1\"].getService(a.nsIVersionComparator),c=b[\"@mozilla.org/xre/app-info;1\"].getService(a.nsIXULAppInfo).version;L=function(a){e.compare(c,\"\"+a)};return!0}(),N=y&amp;&amp;!(8&lt;=Number(G)),fa=y&amp;&amp;!(9&lt;=Number(G));I&amp;&amp;M&amp;&amp;L(2.3);I&amp;&amp;M&amp;&amp;L(4);J&amp;&amp;M&amp;&amp;L(6);var ga={SCRIPT:1,STYLE:1,HEAD:1,IFRAME:1,OBJECT:1},O={IMG:\" \",BR:\"\\n\"};function P(a,b,e){if(!(a.nodeName in ga))if(3==a.nodeType)e?b.push(String(a.nodeValue).replace(/(\\r\\n|\\r|\\n)/g,\"\")):b.push(a.nodeValue);else if(a.nodeName in O)b.push(O[a.nodeName]);else for(a=a.firstChild;a;)P(a,b,e),a=a.nextSibling};function Q(a,b){b=b.toLowerCase();return\"style\"==b?ha(a.style.cssText):N&amp;&amp;\"value\"==b&amp;&amp;R(a,\"INPUT\")?a.value:fa&amp;&amp;!0===a[b]?String(a.getAttribute(b)):(a=a.getAttributeNode(b))&amp;&amp;a.specified?a.value:null}var ia=/[;]+(?=(?:(?:[^\"]*\"){2})*[^\"]*$)(?=(?:(?:[^']*'){2})*[^']*$)(?=(?:[^()]*\\([^()]*\\))*[^()]*$)/;\nfunction ha(a){var b=[];t(a.split(ia),function(a){var c=a.indexOf(\":\");0&lt;c&amp;&amp;(a=[a.slice(0,c),a.slice(c+1)],2==a.length&amp;&amp;b.push(a[0].toLowerCase(),\":\",a[1],\";\"))});b=b.join(\"\");return b=\";\"==b.charAt(b.length-1)?b:b+\";\"}function S(a,b){N&amp;&amp;\"value\"==b&amp;&amp;R(a,\"OPTION\")&amp;&amp;null===Q(a,\"value\")?(b=[],P(a,b,!1),a=b.join(\"\")):a=a[b];return a}function R(a,b){b&amp;&amp;\"string\"!==typeof b&amp;&amp;(b=b.toString());return!!a&amp;&amp;1==a.nodeType&amp;&amp;(!b||a.tagName.toUpperCase()==b)}\nfunction T(a){return R(a,\"OPTION\")?!0:R(a,\"INPUT\")?(a=a.type.toLowerCase(),\"checkbox\"==a||\"radio\"==a):!1};var ja={\"class\":\"className\",readonly:\"readOnly\"},U=\"allowfullscreen allowpaymentrequest allowusermedia async autofocus autoplay checked compact complete controls declare default defaultchecked defaultselected defer disabled ended formnovalidate hidden indeterminate iscontenteditable ismap itemscope loop multiple muted nohref nomodule noresize noshade novalidate nowrap open paused playsinline pubdate readonly required reversed scoped seamless seeking selected truespeed typemustmatch willvalidate\".split(\" \");function V(a,b){var e=null,c=b.toLowerCase();if(\"style\"==c)return(e=a.style)&amp;&amp;!f(e)&amp;&amp;(e=e.cssText),e;if((\"selected\"==c||\"checked\"==c)&amp;&amp;T(a)){if(!T(a))throw new h(15,\"Element is not selectable\");b=\"selected\";e=a.type&amp;&amp;a.type.toLowerCase();if(\"checkbox\"==e||\"radio\"==e)b=\"checked\";return S(a,b)?\"true\":null}var g=R(a,\"A\");if(R(a,\"IMG\")&amp;&amp;\"src\"==c||g&amp;&amp;\"href\"==c)return(e=Q(a,c))&amp;&amp;(e=S(a,c)),e;if(\"spellcheck\"==c){e=Q(a,c);if(null!==e){if(\"false\"==e.toLowerCase())return\"false\";if(\"true\"==e.toLowerCase())return\"true\"}return S(a,\nc)+\"\"}g=ja[b]||b;a:if(f(U))c=f(c)&amp;&amp;1==c.length?U.indexOf(c,0):-1;else{for(var u=0;u&lt;U.length;u++)if(u in U&amp;&amp;U[u]===c){c=u;break a}c=-1}if(0&lt;=c)return(e=null!==Q(a,b)||S(a,g))?\"true\":null;try{var k=S(a,g)}catch(ka){}(c=null==k)||(c=typeof k,c=\"object\"==c&amp;&amp;null!=k||\"function\"==c);c?e=Q(a,b):e=k;return null!=e?e.toString():null}var W=[\"_\"],X=d;W[0]in X||!X.execScript||X.execScript(\"var \"+W[0]);\nfor(var Y;W.length&amp;&amp;(Y=W.shift());){var Z;if(Z=!W.length)Z=void 0!==V;Z?X[Y]=V:X[Y]&amp;&amp;X[Y]!==Object.prototype[Y]?X=X[Y]:X=X[Y]={}};; return this._.apply(null,arguments);}.apply({navigator:typeof window!='undefined'?window.navigator:null,document:typeof window!='undefined'?window.document:null}, arguments);}\n).apply(null, arguments);", "args": [{"ELEMENT": "27b8f5d9-a229-4379-a8e5-5bf3c1a127f4", "element-6066-11e4-a52e-4f735466cecf": "27b8f5d9-a229-4379-a8e5-5bf3c1a127f4"}, "aria-label"]}</msg>
+<msg timestamp="20210313 13:13:21.366" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/execute/sync HTTP/1.1" 200 30</msg>
+<msg timestamp="20210313 13:13:21.366" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:21.366" level="TRACE">Return: 'Destination Dublin'</msg>
+<msg timestamp="20210313 13:13:21.366" level="INFO">${ui_destination} = Destination Dublin</msg>
+<status status="PASS" starttime="20210313 13:13:21.287" endtime="20210313 13:13:21.366"></status>
+</kw>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${ui_destination}</arg>
+<arg>Destination</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<assign>
+<var>${ui_destination}</var>
+</assign>
+<msg timestamp="20210313 13:13:21.367" level="TRACE">Arguments: [ 'Destination Dublin' | 'Destination' | '' ]</msg>
+<msg timestamp="20210313 13:13:21.367" level="TRACE">Return: ' Dublin'</msg>
+<msg timestamp="20210313 13:13:21.367" level="INFO">${ui_destination} =  Dublin</msg>
+<status status="PASS" starttime="20210313 13:13:21.367" endtime="20210313 13:13:21.367"></status>
+</kw>
+<kw name="Strip String" library="String">
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<arguments>
+<arg>${ui_destination}</arg>
+</arguments>
+<assign>
+<var>${ui_destination}</var>
+</assign>
+<msg timestamp="20210313 13:13:21.367" level="TRACE">Arguments: [ ' Dublin' ]</msg>
+<msg timestamp="20210313 13:13:21.367" level="TRACE">Return: 'Dublin'</msg>
+<msg timestamp="20210313 13:13:21.368" level="INFO">${ui_destination} = Dublin</msg>
+<status status="PASS" starttime="20210313 13:13:21.367" endtime="20210313 13:13:21.368"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${ui_destination}</arg>
+<arg>${location}</arg>
+</arguments>
+<msg timestamp="20210313 13:13:21.368" level="TRACE">Arguments: [ 'Dublin' | 'Dublin' ]</msg>
+<msg timestamp="20210313 13:13:21.368" level="DEBUG">Argument types are:
+&lt;type 'unicode'&gt;
+&lt;type 'unicode'&gt;</msg>
+<msg timestamp="20210313 13:13:21.368" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:21.368" endtime="20210313 13:13:21.368"></status>
+</kw>
+<msg timestamp="20210313 13:13:21.369" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:20.922" endtime="20210313 13:13:21.369"></status>
+</kw>
+<msg timestamp="20210313 13:13:21.369" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:20.921" endtime="20210313 13:13:21.369"></status>
+</kw>
+<tags>
+<tag>google-maps-dublin</tag>
+</tags>
+<status status="PASS" starttime="20210313 13:12:41.764" endtime="20210313 13:13:21.369" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t2" name="Verify google maps search and directions functionatily to Galway">
+<kw name="Go to google maps website" library="maps_keywords">
+<msg timestamp="20210313 13:13:21.371" level="TRACE">Arguments: [  ]</msg>
+<kw name="Open google maps page" library="maps">
+<msg timestamp="20210313 13:13:21.371" level="TRACE">Arguments: [  ]</msg>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>\nNavigating to url.</arg>
+</arguments>
+<msg timestamp="20210313 13:13:21.372" level="TRACE">Arguments: [ '\nNavigating to url.' ]</msg>
+<msg timestamp="20210313 13:13:21.372" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:21.372" endtime="20210313 13:13:21.372"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${app_url}</arg>
+</arguments>
+<msg timestamp="20210313 13:13:21.373" level="TRACE">Arguments: [ 'https://www.google.com/maps' ]</msg>
+<msg timestamp="20210313 13:13:21.373" level="INFO">Opening url 'https://www.google.com/maps'</msg>
+<msg timestamp="20210313 13:13:21.373" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/url {"url": "https://www.google.com/maps"}</msg>
+<msg timestamp="20210313 13:13:21.949" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/url HTTP/1.1" 200 14</msg>
+<msg timestamp="20210313 13:13:21.950" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:21.950" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:21.372" endtime="20210313 13:13:21.950"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${search_box}</arg>
+</arguments>
+<msg timestamp="20210313 13:13:21.951" level="TRACE">Arguments: [ 'id=searchboxinput' ]</msg>
+<msg timestamp="20210313 13:13:21.951" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "css selector", "value": "[id=\"searchboxinput\"]"}</msg>
+<msg timestamp="20210313 13:13:22.361" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:22.361" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:22.362" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:21.951" endtime="20210313 13:13:22.362"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${cookies_accepted}"=="true"</arg>
+<arg>Return From Keyword</arg>
+</arguments>
+<msg timestamp="20210313 13:13:22.363" level="TRACE">Arguments: [ '"true"=="true"' | 'Return From Keyword' ]</msg>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<msg timestamp="20210313 13:13:22.364" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20210313 13:13:22.364" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20210313 13:13:22.364" endtime="20210313 13:13:22.364"></status>
+</kw>
+<status status="PASS" starttime="20210313 13:13:22.363" endtime="20210313 13:13:22.364"></status>
+</kw>
+<msg timestamp="20210313 13:13:22.365" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:21.371" endtime="20210313 13:13:22.365"></status>
+</kw>
+<msg timestamp="20210313 13:13:22.365" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:21.371" endtime="20210313 13:13:22.365"></status>
+</kw>
+<kw name="Enter Galway in the search box" library="maps_keywords">
+<msg timestamp="20210313 13:13:22.366" level="TRACE">Arguments: [ ${location}='Galway' ]</msg>
+<kw name="Enter ${location} in the search input" library="maps">
+<msg timestamp="20210313 13:13:22.367" level="TRACE">Arguments: [ ${location}='Galway' ]</msg>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>\nGoing to search for ${location}.</arg>
+</arguments>
+<msg timestamp="20210313 13:13:22.367" level="TRACE">Arguments: [ '\nGoing to search for Galway.' ]</msg>
+<msg timestamp="20210313 13:13:22.368" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:22.367" endtime="20210313 13:13:22.368"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210313 13:13:22.368" level="TRACE">Arguments: [ '1' ]</msg>
+<msg timestamp="20210313 13:13:23.369" level="INFO">Slept 1 second</msg>
+<msg timestamp="20210313 13:13:23.369" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:22.368" endtime="20210313 13:13:23.369"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${search_box}</arg>
+</arguments>
+<msg timestamp="20210313 13:13:23.369" level="TRACE">Arguments: [ 'id=searchboxinput' ]</msg>
+<msg timestamp="20210313 13:13:23.370" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "css selector", "value": "[id=\"searchboxinput\"]"}</msg>
+<msg timestamp="20210313 13:13:23.381" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:23.381" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:23.382" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:23.369" endtime="20210313 13:13:23.382"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${search_box}</arg>
+<arg>${location}</arg>
+</arguments>
+<msg timestamp="20210313 13:13:23.382" level="TRACE">Arguments: [ 'id=searchboxinput' | 'Galway' ]</msg>
+<msg timestamp="20210313 13:13:23.382" level="INFO">Typing text 'Galway' into text field 'id=searchboxinput'.</msg>
+<msg timestamp="20210313 13:13:23.383" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "css selector", "value": "[id=\"searchboxinput\"]"}</msg>
+<msg timestamp="20210313 13:13:23.404" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:23.406" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:23.406" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/element/a192ae02-9116-4ff7-bca0-c74dbe770944/clear {"id": "a192ae02-9116-4ff7-bca0-c74dbe770944"}</msg>
+<msg timestamp="20210313 13:13:23.464" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/element/a192ae02-9116-4ff7-bca0-c74dbe770944/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20210313 13:13:23.464" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:23.464" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/element/a192ae02-9116-4ff7-bca0-c74dbe770944/value {"text": "Galway", "value": ["G", "a", "l", "w", "a", "y"], "id": "a192ae02-9116-4ff7-bca0-c74dbe770944"}</msg>
+<msg timestamp="20210313 13:13:23.691" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/element/a192ae02-9116-4ff7-bca0-c74dbe770944/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20210313 13:13:23.691" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:23.691" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:23.382" endtime="20210313 13:13:23.691"></status>
+</kw>
+<msg timestamp="20210313 13:13:23.692" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:22.366" endtime="20210313 13:13:23.692"></status>
+</kw>
+<msg timestamp="20210313 13:13:23.692" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:22.365" endtime="20210313 13:13:23.692"></status>
+</kw>
+<kw name="Click the Search icon" library="maps_keywords">
+<msg timestamp="20210313 13:13:23.692" level="TRACE">Arguments: [  ]</msg>
+<kw name="Click on the search icon" library="maps">
+<msg timestamp="20210313 13:13:23.693" level="TRACE">Arguments: [  ]</msg>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>\nSubmitting the search.</arg>
+</arguments>
+<msg timestamp="20210313 13:13:23.693" level="TRACE">Arguments: [ '\nSubmitting the search.' ]</msg>
+<msg timestamp="20210313 13:13:23.693" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:23.693" endtime="20210313 13:13:23.693"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${search_icon}</arg>
+</arguments>
+<msg timestamp="20210313 13:13:23.694" level="TRACE">Arguments: [ 'id=searchbox-searchbutton' ]</msg>
+<msg timestamp="20210313 13:13:23.694" level="INFO">Clicking button 'id=searchbox-searchbutton'.</msg>
+<msg timestamp="20210313 13:13:23.694" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "css selector", "value": "[id=\"searchbox-searchbutton\"]"}</msg>
+<msg timestamp="20210313 13:13:23.922" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:23.922" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:23.923" level="DEBUG">GET http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/element/6965fbef-3e06-4e46-b173-fc66d84ca465/name {"id": "6965fbef-3e06-4e46-b173-fc66d84ca465"}</msg>
+<msg timestamp="20210313 13:13:23.964" level="DEBUG">http://127.0.0.1:55979 "GET /session/b9046a9f1f21dd2fb199afabfcab1873/element/6965fbef-3e06-4e46-b173-fc66d84ca465/name HTTP/1.1" 200 18</msg>
+<msg timestamp="20210313 13:13:23.964" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:23.964" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "css selector", "value": "[id=\"searchbox-searchbutton\"]"}</msg>
+<msg timestamp="20210313 13:13:23.977" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:23.977" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:23.977" level="DEBUG">GET http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/element/6965fbef-3e06-4e46-b173-fc66d84ca465/name {"id": "6965fbef-3e06-4e46-b173-fc66d84ca465"}</msg>
+<msg timestamp="20210313 13:13:23.986" level="DEBUG">http://127.0.0.1:55979 "GET /session/b9046a9f1f21dd2fb199afabfcab1873/element/6965fbef-3e06-4e46-b173-fc66d84ca465/name HTTP/1.1" 200 18</msg>
+<msg timestamp="20210313 13:13:23.987" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:23.987" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/element/6965fbef-3e06-4e46-b173-fc66d84ca465/click {"id": "6965fbef-3e06-4e46-b173-fc66d84ca465"}</msg>
+<msg timestamp="20210313 13:13:24.104" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/element/6965fbef-3e06-4e46-b173-fc66d84ca465/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20210313 13:13:24.104" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:24.105" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:23.694" endtime="20210313 13:13:24.105"></status>
+</kw>
+<msg timestamp="20210313 13:13:24.105" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:23.693" endtime="20210313 13:13:24.105"></status>
+</kw>
+<msg timestamp="20210313 13:13:24.105" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:23.692" endtime="20210313 13:13:24.105"></status>
+</kw>
+<kw name="Verify left panel has Galway as a headline text" library="maps_keywords">
+<msg timestamp="20210313 13:13:24.106" level="TRACE">Arguments: [ ${location}='Galway' ]</msg>
+<kw name="Verify left panel heading contains ${location}" library="maps">
+<msg timestamp="20210313 13:13:24.109" level="TRACE">Arguments: [ ${location}='Galway' ]</msg>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>\nVerifying the left panel heading.</arg>
+</arguments>
+<msg timestamp="20210313 13:13:24.109" level="TRACE">Arguments: [ '\nVerifying the left panel heading.' ]</msg>
+<msg timestamp="20210313 13:13:24.109" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:24.109" endtime="20210313 13:13:24.109"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${panel_heading}</arg>
+</arguments>
+<msg timestamp="20210313 13:13:24.110" level="TRACE">Arguments: [ 'xpath=//*[@id="pane"]//*/h1' ]</msg>
+<msg timestamp="20210313 13:13:24.110" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "xpath", "value": "//*[@id=\"pane\"]//*/h1"}</msg>
+<msg timestamp="20210313 13:13:25.676" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:25.676" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:25.677" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:24.110" endtime="20210313 13:13:25.677"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${panel_heading}</arg>
+</arguments>
+<assign>
+<var>${ui_heading}</var>
+</assign>
+<msg timestamp="20210313 13:13:25.677" level="TRACE">Arguments: [ 'xpath=//*[@id="pane"]//*/h1' ]</msg>
+<msg timestamp="20210313 13:13:25.678" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "xpath", "value": "//*[@id=\"pane\"]//*/h1"}</msg>
+<msg timestamp="20210313 13:13:25.713" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:25.713" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:25.713" level="DEBUG">GET http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/element/f3d288fa-82eb-4fc9-8c73-bd9458ab4482/text {"id": "f3d288fa-82eb-4fc9-8c73-bd9458ab4482"}</msg>
+<msg timestamp="20210313 13:13:25.749" level="DEBUG">http://127.0.0.1:55979 "GET /session/b9046a9f1f21dd2fb199afabfcab1873/element/f3d288fa-82eb-4fc9-8c73-bd9458ab4482/text HTTP/1.1" 200 18</msg>
+<msg timestamp="20210313 13:13:25.750" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:25.750" level="TRACE">Return: 'Galway'</msg>
+<msg timestamp="20210313 13:13:25.750" level="INFO">${ui_heading} = Galway</msg>
+<status status="PASS" starttime="20210313 13:13:25.677" endtime="20210313 13:13:25.750"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${ui_heading}</arg>
+<arg>${location}</arg>
+</arguments>
+<msg timestamp="20210313 13:13:25.751" level="TRACE">Arguments: [ 'Galway' | 'Galway' ]</msg>
+<msg timestamp="20210313 13:13:25.751" level="DEBUG">Argument types are:
+&lt;type 'unicode'&gt;
+&lt;type 'unicode'&gt;</msg>
+<msg timestamp="20210313 13:13:25.751" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:25.750" endtime="20210313 13:13:25.751"></status>
+</kw>
+<msg timestamp="20210313 13:13:25.751" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:24.107" endtime="20210313 13:13:25.752"></status>
+</kw>
+<msg timestamp="20210313 13:13:25.752" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:24.106" endtime="20210313 13:13:25.752"></status>
+</kw>
+<kw name="Click Directions icon" library="maps_keywords">
+<msg timestamp="20210313 13:13:25.755" level="TRACE">Arguments: [  ]</msg>
+<kw name="Click on the directions icon" library="maps">
+<msg timestamp="20210313 13:13:25.755" level="TRACE">Arguments: [  ]</msg>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>\nClicking on the directions icon.</arg>
+</arguments>
+<msg timestamp="20210313 13:13:25.756" level="TRACE">Arguments: [ '\nClicking on the directions icon.' ]</msg>
+<msg timestamp="20210313 13:13:25.756" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:25.755" endtime="20210313 13:13:25.756"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${directions_icon}</arg>
+</arguments>
+<msg timestamp="20210313 13:13:25.757" level="TRACE">Arguments: [ 'xpath=//*[@id="pane"]//*/button[@data-value="Directions"]' ]</msg>
+<msg timestamp="20210313 13:13:25.757" level="INFO">Clicking button 'xpath=//*[@id="pane"]//*/button[@data-value="Directions"]'.</msg>
+<msg timestamp="20210313 13:13:25.757" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "xpath", "value": "//*[@id=\"pane\"]//*/button[@data-value=\"Directions\"]"}</msg>
+<msg timestamp="20210313 13:13:25.800" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:25.801" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:25.801" level="DEBUG">GET http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/element/c5853118-457d-46b2-8d21-e6cc909a5ded/name {"id": "c5853118-457d-46b2-8d21-e6cc909a5ded"}</msg>
+<msg timestamp="20210313 13:13:25.859" level="DEBUG">http://127.0.0.1:55979 "GET /session/b9046a9f1f21dd2fb199afabfcab1873/element/c5853118-457d-46b2-8d21-e6cc909a5ded/name HTTP/1.1" 200 18</msg>
+<msg timestamp="20210313 13:13:25.859" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:25.860" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "xpath", "value": "//*[@id=\"pane\"]//*/button[@data-value=\"Directions\"]"}</msg>
+<msg timestamp="20210313 13:13:25.880" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:25.881" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:25.881" level="DEBUG">GET http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/element/c5853118-457d-46b2-8d21-e6cc909a5ded/name {"id": "c5853118-457d-46b2-8d21-e6cc909a5ded"}</msg>
+<msg timestamp="20210313 13:13:25.897" level="DEBUG">http://127.0.0.1:55979 "GET /session/b9046a9f1f21dd2fb199afabfcab1873/element/c5853118-457d-46b2-8d21-e6cc909a5ded/name HTTP/1.1" 200 18</msg>
+<msg timestamp="20210313 13:13:25.897" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:25.898" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/element/c5853118-457d-46b2-8d21-e6cc909a5ded/click {"id": "c5853118-457d-46b2-8d21-e6cc909a5ded"}</msg>
+<msg timestamp="20210313 13:13:25.976" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/element/c5853118-457d-46b2-8d21-e6cc909a5ded/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20210313 13:13:25.977" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:25.977" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:25.756" endtime="20210313 13:13:25.977"></status>
+</kw>
+<msg timestamp="20210313 13:13:25.977" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:25.755" endtime="20210313 13:13:25.977"></status>
+</kw>
+<msg timestamp="20210313 13:13:25.977" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:25.752" endtime="20210313 13:13:25.977"></status>
+</kw>
+<kw name="Verify destination field is Galway" library="maps_keywords">
+<msg timestamp="20210313 13:13:25.978" level="TRACE">Arguments: [ ${location}='Galway' ]</msg>
+<kw name="Verify the destination field content is ${location}" library="maps">
+<msg timestamp="20210313 13:13:25.978" level="TRACE">Arguments: [ ${location}='Galway' ]</msg>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>\nVerifying the destination field content.</arg>
+</arguments>
+<msg timestamp="20210313 13:13:25.979" level="TRACE">Arguments: [ '\nVerifying the destination field content.' ]</msg>
+<msg timestamp="20210313 13:13:25.979" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:25.978" endtime="20210313 13:13:25.979"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${destination_input}</arg>
+</arguments>
+<msg timestamp="20210313 13:13:25.979" level="TRACE">Arguments: [ 'xpath=//*[@id="directions-searchbox-1"]//*/input' ]</msg>
+<msg timestamp="20210313 13:13:25.980" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "xpath", "value": "//*[@id=\"directions-searchbox-1\"]//*/input"}</msg>
+<msg timestamp="20210313 13:13:26.251" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:26.251" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:26.251" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:25.979" endtime="20210313 13:13:26.252"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>${destination_input}</arg>
+<arg>aria-label</arg>
+</arguments>
+<assign>
+<var>${ui_destination}</var>
+</assign>
+<msg timestamp="20210313 13:13:26.253" level="TRACE">Arguments: [ 'xpath=//*[@id="directions-searchbox-1"]//*/input' | 'aria-label' ]</msg>
+<msg timestamp="20210313 13:13:26.253" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/elements {"using": "xpath", "value": "//*[@id=\"directions-searchbox-1\"]//*/input"}</msg>
+<msg timestamp="20210313 13:13:26.285" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20210313 13:13:26.285" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:26.286" level="DEBUG">POST http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873/execute/sync {"script": "return (function(){return function(){var d=this;function f(a){return\"string\"==typeof a};function h(a,b){this.code=a;this.a=l[a]||m;this.message=b||\"\";a=this.a.replace(/((?:^|\\s+)[a-z])/g,function(a){return a.toUpperCase().replace(/^[\\s\\xa0]+/g,\"\")});b=a.length-5;if(0&gt;b||a.indexOf(\"Error\",b)!=b)a+=\"Error\";this.name=a;a=Error(this.message);a.name=this.name;this.stack=a.stack||\"\"}\n(function(){var a=Error;function b(){}b.prototype=a.prototype;h.b=a.prototype;h.prototype=new b;h.prototype.constructor=h;h.a=function(b,c,g){for(var e=Array(arguments.length-2),k=2;k&lt;arguments.length;k++)e[k-2]=arguments[k];return a.prototype[c].apply(b,e)}})();var m=\"unknown error\",l={15:\"element not selectable\",11:\"element not visible\"};l[31]=m;l[30]=m;l[24]=\"invalid cookie domain\";l[29]=\"invalid element coordinates\";l[12]=\"invalid element state\";l[32]=\"invalid selector\";l[51]=\"invalid selector\";\nl[52]=\"invalid selector\";l[17]=\"javascript error\";l[405]=\"unsupported operation\";l[34]=\"move target out of bounds\";l[27]=\"no such alert\";l[7]=\"no such element\";l[8]=\"no such frame\";l[23]=\"no such window\";l[28]=\"script timeout\";l[33]=\"session not created\";l[10]=\"stale element reference\";l[21]=\"timeout\";l[25]=\"unable to set cookie\";l[26]=\"unexpected alert open\";l[13]=m;l[9]=\"unknown command\";h.prototype.toString=function(){return this.name+\": \"+this.message};var n;a:{var p=d.navigator;if(p){var q=p.userAgent;if(q){n=q;break a}}n=\"\"}function r(a){return-1!=n.indexOf(a)};function t(a,b){for(var e=a.length,c=f(a)?a.split(\"\"):a,g=0;g&lt;e;g++)g in c&amp;&amp;b.call(void 0,c[g],g,a)};function v(){return r(\"iPhone\")&amp;&amp;!r(\"iPod\")&amp;&amp;!r(\"iPad\")};function w(){return(r(\"Chrome\")||r(\"CriOS\"))&amp;&amp;!r(\"Edge\")};var x=r(\"Opera\"),y=r(\"Trident\")||r(\"MSIE\"),z=r(\"Edge\"),A=r(\"Gecko\")&amp;&amp;!(-1!=n.toLowerCase().indexOf(\"webkit\")&amp;&amp;!r(\"Edge\"))&amp;&amp;!(r(\"Trident\")||r(\"MSIE\"))&amp;&amp;!r(\"Edge\"),aa=-1!=n.toLowerCase().indexOf(\"webkit\")&amp;&amp;!r(\"Edge\");function B(){var a=d.document;return a?a.documentMode:void 0}var C;\na:{var D=\"\",E=function(){var a=n;if(A)return/rv\\:([^\\);]+)(\\)|;)/.exec(a);if(z)return/Edge\\/([\\d\\.]+)/.exec(a);if(y)return/\\b(?:MSIE|rv)[: ]([^\\);]+)(\\)|;)/.exec(a);if(aa)return/WebKit\\/(\\S+)/.exec(a);if(x)return/(?:Version)[ \\/]?(\\S+)/.exec(a)}();E&amp;&amp;(D=E?E[1]:\"\");if(y){var F=B();if(null!=F&amp;&amp;F&gt;parseFloat(D)){C=String(F);break a}}C=D}var G;var H=d.document;G=H&amp;&amp;y?B()||(\"CSS1Compat\"==H.compatMode?parseInt(C,10):5):void 0;var ba=r(\"Firefox\"),ca=v()||r(\"iPod\"),da=r(\"iPad\"),I=r(\"Android\")&amp;&amp;!(w()||r(\"Firefox\")||r(\"Opera\")||r(\"Silk\")),ea=w(),J=r(\"Safari\")&amp;&amp;!(w()||r(\"Coast\")||r(\"Opera\")||r(\"Edge\")||r(\"Silk\")||r(\"Android\"))&amp;&amp;!(v()||r(\"iPad\")||r(\"iPod\"));function K(a){return(a=a.exec(n))?a[1]:\"\"}(function(){if(ba)return K(/Firefox\\/([0-9.]+)/);if(y||z||x)return C;if(ea)return v()||r(\"iPad\")||r(\"iPod\")?K(/CriOS\\/([0-9.]+)/):K(/Chrome\\/([0-9.]+)/);if(J&amp;&amp;!(v()||r(\"iPad\")||r(\"iPod\")))return K(/Version\\/([0-9.]+)/);if(ca||da){var a=/Version\\/(\\S+).*Mobile\\/(\\S+)/.exec(n);if(a)return a[1]+\".\"+a[2]}else if(I)return(a=K(/Android\\s+([0-9.]+)/))?a:K(/Version\\/([0-9.]+)/);return\"\"})();var L,M=function(){if(!A)return!1;var a=d.Components;if(!a)return!1;try{if(!a.classes)return!1}catch(g){return!1}var b=a.classes,a=a.interfaces,e=b[\"@mozilla.org/xpcom/version-comparator;1\"].getService(a.nsIVersionComparator),c=b[\"@mozilla.org/xre/app-info;1\"].getService(a.nsIXULAppInfo).version;L=function(a){e.compare(c,\"\"+a)};return!0}(),N=y&amp;&amp;!(8&lt;=Number(G)),fa=y&amp;&amp;!(9&lt;=Number(G));I&amp;&amp;M&amp;&amp;L(2.3);I&amp;&amp;M&amp;&amp;L(4);J&amp;&amp;M&amp;&amp;L(6);var ga={SCRIPT:1,STYLE:1,HEAD:1,IFRAME:1,OBJECT:1},O={IMG:\" \",BR:\"\\n\"};function P(a,b,e){if(!(a.nodeName in ga))if(3==a.nodeType)e?b.push(String(a.nodeValue).replace(/(\\r\\n|\\r|\\n)/g,\"\")):b.push(a.nodeValue);else if(a.nodeName in O)b.push(O[a.nodeName]);else for(a=a.firstChild;a;)P(a,b,e),a=a.nextSibling};function Q(a,b){b=b.toLowerCase();return\"style\"==b?ha(a.style.cssText):N&amp;&amp;\"value\"==b&amp;&amp;R(a,\"INPUT\")?a.value:fa&amp;&amp;!0===a[b]?String(a.getAttribute(b)):(a=a.getAttributeNode(b))&amp;&amp;a.specified?a.value:null}var ia=/[;]+(?=(?:(?:[^\"]*\"){2})*[^\"]*$)(?=(?:(?:[^']*'){2})*[^']*$)(?=(?:[^()]*\\([^()]*\\))*[^()]*$)/;\nfunction ha(a){var b=[];t(a.split(ia),function(a){var c=a.indexOf(\":\");0&lt;c&amp;&amp;(a=[a.slice(0,c),a.slice(c+1)],2==a.length&amp;&amp;b.push(a[0].toLowerCase(),\":\",a[1],\";\"))});b=b.join(\"\");return b=\";\"==b.charAt(b.length-1)?b:b+\";\"}function S(a,b){N&amp;&amp;\"value\"==b&amp;&amp;R(a,\"OPTION\")&amp;&amp;null===Q(a,\"value\")?(b=[],P(a,b,!1),a=b.join(\"\")):a=a[b];return a}function R(a,b){b&amp;&amp;\"string\"!==typeof b&amp;&amp;(b=b.toString());return!!a&amp;&amp;1==a.nodeType&amp;&amp;(!b||a.tagName.toUpperCase()==b)}\nfunction T(a){return R(a,\"OPTION\")?!0:R(a,\"INPUT\")?(a=a.type.toLowerCase(),\"checkbox\"==a||\"radio\"==a):!1};var ja={\"class\":\"className\",readonly:\"readOnly\"},U=\"allowfullscreen allowpaymentrequest allowusermedia async autofocus autoplay checked compact complete controls declare default defaultchecked defaultselected defer disabled ended formnovalidate hidden indeterminate iscontenteditable ismap itemscope loop multiple muted nohref nomodule noresize noshade novalidate nowrap open paused playsinline pubdate readonly required reversed scoped seamless seeking selected truespeed typemustmatch willvalidate\".split(\" \");function V(a,b){var e=null,c=b.toLowerCase();if(\"style\"==c)return(e=a.style)&amp;&amp;!f(e)&amp;&amp;(e=e.cssText),e;if((\"selected\"==c||\"checked\"==c)&amp;&amp;T(a)){if(!T(a))throw new h(15,\"Element is not selectable\");b=\"selected\";e=a.type&amp;&amp;a.type.toLowerCase();if(\"checkbox\"==e||\"radio\"==e)b=\"checked\";return S(a,b)?\"true\":null}var g=R(a,\"A\");if(R(a,\"IMG\")&amp;&amp;\"src\"==c||g&amp;&amp;\"href\"==c)return(e=Q(a,c))&amp;&amp;(e=S(a,c)),e;if(\"spellcheck\"==c){e=Q(a,c);if(null!==e){if(\"false\"==e.toLowerCase())return\"false\";if(\"true\"==e.toLowerCase())return\"true\"}return S(a,\nc)+\"\"}g=ja[b]||b;a:if(f(U))c=f(c)&amp;&amp;1==c.length?U.indexOf(c,0):-1;else{for(var u=0;u&lt;U.length;u++)if(u in U&amp;&amp;U[u]===c){c=u;break a}c=-1}if(0&lt;=c)return(e=null!==Q(a,b)||S(a,g))?\"true\":null;try{var k=S(a,g)}catch(ka){}(c=null==k)||(c=typeof k,c=\"object\"==c&amp;&amp;null!=k||\"function\"==c);c?e=Q(a,b):e=k;return null!=e?e.toString():null}var W=[\"_\"],X=d;W[0]in X||!X.execScript||X.execScript(\"var \"+W[0]);\nfor(var Y;W.length&amp;&amp;(Y=W.shift());){var Z;if(Z=!W.length)Z=void 0!==V;Z?X[Y]=V:X[Y]&amp;&amp;X[Y]!==Object.prototype[Y]?X=X[Y]:X=X[Y]={}};; return this._.apply(null,arguments);}.apply({navigator:typeof window!='undefined'?window.navigator:null,document:typeof window!='undefined'?window.document:null}, arguments);}\n).apply(null, arguments);", "args": [{"ELEMENT": "a6694ede-aee9-493b-af75-aa32dd8a140b", "element-6066-11e4-a52e-4f735466cecf": "a6694ede-aee9-493b-af75-aa32dd8a140b"}, "aria-label"]}</msg>
+<msg timestamp="20210313 13:13:26.312" level="DEBUG">http://127.0.0.1:55979 "POST /session/b9046a9f1f21dd2fb199afabfcab1873/execute/sync HTTP/1.1" 200 30</msg>
+<msg timestamp="20210313 13:13:26.313" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:26.313" level="TRACE">Return: 'Destination Galway'</msg>
+<msg timestamp="20210313 13:13:26.313" level="INFO">${ui_destination} = Destination Galway</msg>
+<status status="PASS" starttime="20210313 13:13:26.252" endtime="20210313 13:13:26.313"></status>
+</kw>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${ui_destination}</arg>
+<arg>Destination</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<assign>
+<var>${ui_destination}</var>
+</assign>
+<msg timestamp="20210313 13:13:26.314" level="TRACE">Arguments: [ 'Destination Galway' | 'Destination' | '' ]</msg>
+<msg timestamp="20210313 13:13:26.314" level="TRACE">Return: ' Galway'</msg>
+<msg timestamp="20210313 13:13:26.315" level="INFO">${ui_destination} =  Galway</msg>
+<status status="PASS" starttime="20210313 13:13:26.313" endtime="20210313 13:13:26.315"></status>
+</kw>
+<kw name="Strip String" library="String">
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<arguments>
+<arg>${ui_destination}</arg>
+</arguments>
+<assign>
+<var>${ui_destination}</var>
+</assign>
+<msg timestamp="20210313 13:13:26.315" level="TRACE">Arguments: [ ' Galway' ]</msg>
+<msg timestamp="20210313 13:13:26.316" level="TRACE">Return: 'Galway'</msg>
+<msg timestamp="20210313 13:13:26.316" level="INFO">${ui_destination} = Galway</msg>
+<status status="PASS" starttime="20210313 13:13:26.315" endtime="20210313 13:13:26.316"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${ui_destination}</arg>
+<arg>${location}</arg>
+</arguments>
+<msg timestamp="20210313 13:13:26.316" level="TRACE">Arguments: [ 'Galway' | 'Galway' ]</msg>
+<msg timestamp="20210313 13:13:26.317" level="DEBUG">Argument types are:
+&lt;type 'unicode'&gt;
+&lt;type 'unicode'&gt;</msg>
+<msg timestamp="20210313 13:13:26.317" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:26.316" endtime="20210313 13:13:26.317"></status>
+</kw>
+<msg timestamp="20210313 13:13:26.317" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:25.978" endtime="20210313 13:13:26.317"></status>
+</kw>
+<msg timestamp="20210313 13:13:26.317" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:25.977" endtime="20210313 13:13:26.318"></status>
+</kw>
+<tags>
+<tag>google-maps-galway</tag>
+</tags>
+<status status="PASS" starttime="20210313 13:13:21.370" endtime="20210313 13:13:26.318" critical="yes"></status>
+</test>
+<doc>Verify google maps search and directions functionatily</doc>
+<status status="PASS" starttime="20210313 13:12:41.743" endtime="20210313 13:13:26.320"></status>
+</suite>
+<status status="PASS" starttime="20210313 13:12:41.740" endtime="20210313 13:13:26.324"></status>
+</suite>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="teardown">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<msg timestamp="20210313 13:13:26.326" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20210313 13:13:26.326" level="DEBUG">Closing all browsers.</msg>
+<msg timestamp="20210313 13:13:26.326" level="DEBUG">DELETE http://127.0.0.1:55979/session/b9046a9f1f21dd2fb199afabfcab1873 {}</msg>
+<msg timestamp="20210313 13:13:26.383" level="DEBUG">http://127.0.0.1:55979 "DELETE /session/b9046a9f1f21dd2fb199afabfcab1873 HTTP/1.1" 200 14</msg>
+<msg timestamp="20210313 13:13:26.383" level="DEBUG">Finished Request</msg>
+<msg timestamp="20210313 13:13:26.398" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20210313 13:13:26.325" endtime="20210313 13:13:26.399"></status>
+</kw>
+<doc>UI Test Suite for Sigil</doc>
+<status status="PASS" starttime="20210313 13:12:39.992" endtime="20210313 13:13:26.399"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">google-maps-dublin</stat>
+<stat pass="1" fail="0">google-maps-galway</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" id="s1" name="Robot Framework">Robot Framework</stat>
+<stat pass="2" fail="0" id="s1-s1" name="Tests">Robot Framework.Tests</stat>
+<stat pass="2" fail="0" id="s1-s1-s1" name="Maps Test">Robot Framework.Tests.Maps Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
