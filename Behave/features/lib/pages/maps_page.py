@@ -53,3 +53,4 @@ class MapsPage(object):
         ui_text = self.find_element(*self.locator_dictionary['directions_input']).get_attribute('aria-label')
         ui_text = ui_text.split()[1]
         assert ui_text == location
+
