@@ -5,8 +5,7 @@ Library        String
 
 *** Variables ***
 ${cookies_accepted}   false
-${cookies_iframe}     xpath=//*[@id="consent-bump"]//*/iframe
-${cookie_consent}     id=introAgreeButton
+${cookie_consent}     xpath=//*[contains(text(),"I agree")] 
 ${search_box}         id=searchboxinput
 ${search_icon}        id=searchbox-searchbutton
 ${panel_heading}      xpath=//*[@id="pane"]//*/h1
@@ -17,20 +16,17 @@ ${destination_input}  xpath=//*[@id="directions-searchbox-1"]//*/input
 Open google maps page
     Log To Console  \nNavigating to url.
     Go To  ${app_url}
-    Wait Until Page Contains Element  ${search_box}
     Run Keyword If   "${cookies_accepted}"=="true"   Return From Keyword
     Cookie Consent
 
 Cookie Consent
     Log To Console  \nAccepting cookies.
-    Select Frame  ${cookies_iframe}
     Wait Until Page Contains Element  ${cookie_consent}
     Click Element  ${cookie_consent}
     Set Global Variable  ${cookies_accepted}  true
 
 Enter ${location} in the search input
     Log To Console  \nGoing to search for ${location}.
-    Sleep  1
     Wait Until Page Contains Element  ${search_box}
     Input Text  ${search_box}  ${location}
 
@@ -54,4 +50,6 @@ Verify the destination field content is ${location}
     ${ui_destination}  Get Element Attribute  ${destination_input}  aria-label
     ${ui_destination}  Replace String  ${ui_destination}  Destination  ${EMPTY}
     ${ui_destination}  Strip String  ${ui_destination}
-    Should Be Equal  ${ui_destination}  ${location}
+    #Should Be Equal  ${ui_destination}  ${location}
+    Should Contain  ${ui_destination}  ${location}
+    
