@@ -6,9 +6,9 @@ Library         OperatingSystem
 Library         SeleniumLibrary
 
 *** Variables ***
-${setup}     Open App Page
-${browser}   chrome
-${app_url}   https://www.google.com/maps
+${setup}    Open App Page
+${browser}  chrome
+${app_url}  https://www.google.com/maps
 
 *** Keywords ***
 Open App Page

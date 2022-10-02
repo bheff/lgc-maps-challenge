@@ -5,11 +5,11 @@ Library        String
 
 *** Variables ***
 ${cookies_accepted}   false
-${cookie_consent}     xpath=//*[contains(text(),"I agree")] 
+${cookie_consent}     xpath=//*[@id="yDmH0d"]//button[@aria-label="Accept all"]
 ${search_box}         id=searchboxinput
 ${search_icon}        id=searchbox-searchbutton
-${panel_heading}      xpath=//*[@id="pane"]//*/h1
-${directions_icon}    xpath=//*[@id="pane"]//*/button[@data-value="Directions"]
+${panel_heading}      css=.DUwDvf.fontHeadlineLarge
+${directions_icon}    xpath=//img[@alt='Directions']
 ${destination_input}  xpath=//*[@id="directions-searchbox-1"]//*/input
 
 *** Keyword ***
@@ -42,7 +42,7 @@ Verify left panel heading contains ${location}
 
 Click on the directions icon
     Log To Console  \nClicking on the directions icon.
-    Click Button  ${directions_icon}
+    Click Image  ${directions_icon}
 
 Verify the destination field content is ${location}
     Log To Console  \nVerifying the destination field content.
